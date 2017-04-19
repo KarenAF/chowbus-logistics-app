@@ -1,0 +1,2 @@
+class ZoneSchedule < ApplicationRecord
+end
