@@ -10,7 +10,9 @@ gem 'rails', '~> 5.0.2'
 
 
 
-gem 'rspec'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+end
 # 4/29/17 add rspec so I can do TDD
 
 
