@@ -11,9 +11,4 @@ RSpec.describe Meal, type: :model do
   it "should belong to restaurant" do
     Meal.reflect_on_association(:restaurant).macro.should  eq(:belongs_to)
   end
-  # it "belongs to restaurant" do
-  #   meal = Meal.create!(restaurant_id: 1, name: "Fried Rice", price: 2.49, available: true)
-  #   restaurant = Restaurant.create!(name: "Wong's Palace")
-  #   expect(meal.restaurant.name).to eq("Wong's Palace")    
-  # end
 end

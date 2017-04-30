@@ -9,9 +9,4 @@ RSpec.describe Restaurant, type: :model do
     Restaurant.reflect_on_association(:meals).macro.should == :has_many
   end
 end
-  # it "has many meals" do
-  #   meal = Meal.create!(restaurant_id: 1, name: "Fried Rice", price: 2.49, available: true)
-  #   restaurant = Restaurant.create!(name: "Wong's Palace")
-  #   expect(restaurant.meals.first.name).to eq("Fried Rice")
-  # end
-# end
+
