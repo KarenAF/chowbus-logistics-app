@@ -58,7 +58,7 @@ Restaurant.create!([
   {name: "LA Chinese"},
   ])
 
-Zone.create!([{"1"}, {"2"}, {"3"}, {"4"},])
+Zone.create!([{name: "1"}, {name: "2"}, {name: "3"}, {name: "4"}])
 
 ZoneSchedule.create!([
   {zone_id: 1, restaurant_id: 1, weekday: 1},
