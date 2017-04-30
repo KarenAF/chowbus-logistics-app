@@ -6,7 +6,7 @@ RSpec.describe Zone, type: :model do
     expect(zone.name).to eq("1")
   end
   it "should have many zone schedules and restaurants" do
-    Zone.reflect_on_association(:zone_schdules).macro.should == :has_many
+    Zone.reflect_on_association(:zone_schedules).macro.should == :has_many
     Zone.reflect_on_association(:restaurants).macro.should == :has_many
   end
 end
