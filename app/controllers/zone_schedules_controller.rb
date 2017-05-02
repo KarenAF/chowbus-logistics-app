@@ -1,0 +1,2 @@
+class ZoneSchedulesController < ApplicationController
+end
