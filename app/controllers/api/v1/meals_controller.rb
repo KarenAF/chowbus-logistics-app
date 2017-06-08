@@ -1,13 +1,17 @@
 class Api::V1::MealsController < ApplicationController
  def index
-    @zone_schedules = ZoneSchedule.where(weekday: params[:weekday])
-    @meals = []
-    @zone_schedules.each do |zone_schedule|
-      zone_schedule.restaurant_id
-      # restaurant = Restaurant.find_by(id: zone_schedule.restaurant_id)
-      @meals << Meal.where(restaurant_id: zone_schedule.restaurant.id)
-      @meals.flatten!
-    end
+  byebug
+    @meals = Meal.includes(:restaurant)
+        .includes(:zone_schedule)
+        .where('zone_schedules.weekday =1')
+    # @zone_schedules = ZoneSchedule.where(weekday: params[:weekday])
+    # @meals = []
+    # @zone_schedules.each do |zone_schedule|
+    #   zone_schedule.restaurant_id
+    #   # restaurant = Restaurant.find_by(id: zone_schedule.restaurant_id)
+    #   @meals << Meal.where(restaurant_id: zone_schedule.restaurant.id)
+    #   @meals.flatten!
+    # end
     # @meals = Meal.where()
     render 'index.json.jbuilder'
 
